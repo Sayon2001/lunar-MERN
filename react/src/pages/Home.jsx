@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Navbar from '../components/Navbar'
 
 const Home = () => {
     const [data, setData] = useState(0)
@@ -6,11 +7,14 @@ const Home = () => {
         setData(data + 1)
     }
     return (
-        <div>
-            <h1>Counter</h1>
-            <h2>{data}</h2>
-            <button onClick={Counter}>Click Me!</button>
-        </div>
+        <>
+            <div className='mt-40 text-center'>
+                <h1>Counter</h1>
+                <h2>{data}</h2>
+                <button onClick={Counter} className='bg-green-800 h-8 w-24 rounded-md text-white'>Click Me!</button>
+            </div>
+        </>
+
     )
 }
 
