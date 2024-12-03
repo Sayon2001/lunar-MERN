@@ -9,40 +9,88 @@ import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar'
 import Services from './pages/Services'
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
+import Footer from './components/Footer'
+import Login from './components/form/Login'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
-  const [isClick, setIsClick] = useState(false)
+  // const [isClick, setIsClick] = useState(false)
 
-  const [isOn, setIsOn] = useState(false)
+  // const [isOn, setIsOn] = useState(false)
 
-  const [toggle, setToggle] = useState(false)
+  // const [toggle, setToggle] = useState(false)
 
-  const onClick = () => {
-    setIsOn(!isOn)
+  // const onClick = () => {
+  //   setIsOn(!isOn)
+  // }
+
+  // const handleClick = () => {
+  //   setToggle(!toggle)
+  //   // if (toggle === true) {
+  //   //   document.body.style.backgroundColor = "white";
+  //   // } else {
+  //   //   document.body.style.backgroundColor = "black";
+  //   // }
+  //   toggle ? document.body.style.backgroundColor = "black" : document.body.style.backgroundColor = "white";
+
+  const Layout = () => {
+    return (
+      <>
+        <Navbar />
+        <Outlet />
+        <Footer />
+      </>
+    )
   }
 
-  const handleClick = () => {
-    setToggle(!toggle)
-    // if (toggle === true) {
-    //   document.body.style.backgroundColor = "white";
-    // } else {
-    //   document.body.style.backgroundColor = "black";
-    // }
-    toggle ? document.body.style.backgroundColor = "black" : document.body.style.backgroundColor = "white";
+  const router = new createBrowserRouter([
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
+        {
+          path: '/',
+          element: <Home />
+        },
+        {
+          path: '/about',
+          element: <About />
+        },
+        {
+          path: '/contact',
+          element: <Contact />
+        },
+        {
+          path: '/services',
+          element: <Services />
+        },
+      ]
+    },
+    {
+      path: '/login',
+      element: <Login />
+    }
+    ,
+    {
+      path: '*',
+      element: <NotFound />
+    }
+  ])
 
-  }
+
   return (
     <>
-      <Navbar />
+      <RouterProvider router={router} />
+      {/* <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/services' element={<Services />} />
         <Route path='*' element={<NotFound />} />
-      </Routes>
+      </Routes> */}
       {/* 
       <div>
         <button onClick={onClick} className='bg-blue-500'>{

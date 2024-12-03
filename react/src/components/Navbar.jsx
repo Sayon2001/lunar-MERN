@@ -16,7 +16,9 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className='flex justify-between gap-2'>
-                <button className='border-2 border-black border-solid rounded-md pr-2 pl-2'>Login</button>
+                <button className='border-2 border-black border-solid rounded-md pr-2 pl-2'>
+                    <Link to={'/login'}>Login</Link>
+                </button>
                 <button className='border-2 border-black border-solid rounded-md pr-2 pl-2'>Register</button>
             </div>
         </nav>
