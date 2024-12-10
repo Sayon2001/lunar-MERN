@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SideBar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .maindiv {
+        background-color: black;
+        width: 30vw;
+        height: 100vh;
+        position: relative;
+        margin-left: -25rem;
+    }
+
+    span {
+        background-color: beige;
+        padding: 5px;
+        font-size: 2rem;
+        position: fixed;
+        top: 5px;
+        left: 5px;
+    }
+
+    .list {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .list li {
+        text-decoration: none;
+        list-style-type: none;
+        color: white;
+        margin-top: 80px;
+        font-size: 2rem;
+    }
+
+    .x {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="maindiv">
+        <span class="x"><i class="fa-solid fa-x"></i></i></span>
+        <span class="menubar"><i class="fa-solid fa-bars"></i></span>
+
+        <div class="list">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+                <li>Services</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/js/all.min.js"></script>
+</body>
+
+</html>
