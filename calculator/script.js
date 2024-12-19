@@ -39,9 +39,13 @@ Array.from(buttons).forEach((button) => {
             string = ""
             input.value = string
         } else if (e.target.innerHTML === "DEL") {
-            i = string.length - 1
-            string = string.substring(0, i)
-            input.value = string
+            if (typeof string === "string") {
+                string = string.substring(0, string.length - 1)
+                input.value = string
+            } else {
+                string = ""
+                input.value = string
+            }
         }
         else {
             string = string + e.target.innerHTML;
