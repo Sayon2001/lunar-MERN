@@ -17,9 +17,10 @@
     justify-content: center;
     gap: 2rem;
     width: 28vw;
-    height: 70vh;
+    height: 80vh;
     border: 2px solid black;
     border-radius: 20px;
+    background-color: black;
 }
 
 .row {
@@ -29,7 +30,7 @@
 }
 
 .row input {
-    width: 16.5rem;
+    width: 15rem;
     height: 3rem;
     padding: 2px 1rem;
     font-size: 1rem;
@@ -43,5 +44,42 @@
     height: 3rem;
     border-radius: 5px;
     font-size: 1rem;
+    font-weight: 600;
+}
+
+.switch-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: -1rem;
+}
+
+h1{
+    color: white;
+}
+
+.bulb{
+    width: 2rem;
+    height: 2rem;
+    background-color: red;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.btnOn{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: green;
+    font-weight: 600;
+}
+.btnOff{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: red;
     font-weight: 600;
 }

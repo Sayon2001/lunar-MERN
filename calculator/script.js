@@ -1,6 +1,34 @@
 let string = "";
 let buttons = document.querySelectorAll(".button");
 let input = document.querySelector("input");
+let isOn = false;
+let bulb = document.querySelector(".bulb")
+
+
+input.disabled = true
+buttons.forEach((button) => {
+    button.disabled = true;
+})
+
+document.querySelector(".btnOff").addEventListener("click", (e) => {
+    string = ""
+    input.value = string
+    input.disabled = true
+    buttons.forEach((button) => {
+        button.disabled = true;
+    })
+    bulb.style.backgroundColor = "red"
+
+})
+document.querySelector(".btnOn").addEventListener("click", (e) => {
+    input.disabled = false
+    buttons.forEach((button) => {
+        button.disabled = false;
+    })
+    bulb.style.backgroundColor = "green"
+})
+
+
 
 Array.from(buttons).forEach((button) => {
     button.addEventListener('click', (e) => {
