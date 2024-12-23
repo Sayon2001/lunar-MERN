@@ -19,7 +19,9 @@ const Navbar = () => {
                 <button className='border-2 border-black border-solid rounded-md pr-2 pl-2'>
                     <Link to={'/login'}>Login</Link>
                 </button>
-                <button className='border-2 border-black border-solid rounded-md pr-2 pl-2'>Register</button>
+                <button className='border-2 border-black border-solid rounded-md pr-2 pl-2'>
+                    <Link to={'/register'}>Register</Link>
+                </button>
             </div>
         </nav>
     )

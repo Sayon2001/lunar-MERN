@@ -12,6 +12,7 @@ import Services from './pages/Services'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import Footer from './components/Footer'
 import Login from './components/form/Login'
+import Register from './components/form/Regiter'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -71,6 +72,10 @@ function App() {
     {
       path: '/login',
       element: <Login />
+    },
+    {
+      path: '/register',
+      element: <Register />
     }
     ,
     {
