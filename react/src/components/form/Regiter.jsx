@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
-import { use } from 'react'
+
+import { Link } from 'react-router-dom'
+import { FaArrowLeft } from "react-icons/fa"
+
 
 const Regiter = () => {
     const initial = {
@@ -22,18 +25,21 @@ const Regiter = () => {
     }
 
     return (
-        <div className='flex justify-center items-center h-[100vh]'>
-            <form className='w-[40rem] p-4 rounded-md shadow-md' action="" onSubmit={handleSubmit}>
-                <h1 className='text-lg font-bold'>Register</h1>
-                <input className='border-b-2 w-full p-1 outline-none mt-2 shadow-sm' value={formData.fullName} type="text" name="fullName" id="" placeholder='Enter your Full Name' onChange={handleChange} />
-                <input className='border-b-2 w-full p-1 outline-none mt-2 shadow-sm' value={formData.address} type="text" name="address" id="" placeholder='Enter Address' onChange={handleChange} />
-                <input className='border-b-2 w-full p-1 outline-none mt-2 shadow-sm' value={formData.email} type="email" name='email' id='' placeholder='Enter your Email' onChange={handleChange} />
-                <input className='border-b-2 w-full p-1 outline-none mt-2 shadow-sm' value={formData.password} type="password" name='password' id='' placeholder='Enter Password' onChange={handleChange} />
-                <div className='flex justify-center items-center'>
-                    <button className='w-[4rem] bg-green-700 mt-4 p-1 rounded-md' type="submit">Submit</button>
-                </div>
-            </form>
-        </div>
+        <>
+            <button className='w-[5rem] border-black border-2 p-1 m-2 rounded-md bg-blue-300'><Link to='/' className='flex gap-1 items-center'><FaArrowLeft /> Home</Link></button>
+            <div className='flex justify-center items-center h-[100vh]'>
+                <form className='w-[40rem] p-4 rounded-md shadow-md' action="" onSubmit={handleSubmit}>
+                    <h1 className='text-lg font-bold'>Register</h1>
+                    <input className='border-b-2 w-full p-1 outline-none mt-2 shadow-sm' value={formData.fullName} type="text" name="fullName" id="" placeholder='Enter your Full Name' onChange={handleChange} />
+                    <input className='border-b-2 w-full p-1 outline-none mt-2 shadow-sm' value={formData.address} type="text" name="address" id="" placeholder='Enter Address' onChange={handleChange} />
+                    <input className='border-b-2 w-full p-1 outline-none mt-2 shadow-sm' value={formData.email} type="email" name='email' id='' placeholder='Enter your Email' onChange={handleChange} />
+                    <input className='border-b-2 w-full p-1 outline-none mt-2 shadow-sm' value={formData.password} type="password" name='password' id='' placeholder='Enter Password' onChange={handleChange} />
+                    <div className='flex justify-center items-center'>
+                        <button className='w-[4rem] bg-green-700 mt-4 p-1 rounded-md' type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </>
     )
 }
 
