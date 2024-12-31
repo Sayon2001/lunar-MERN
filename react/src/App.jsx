@@ -14,6 +14,7 @@ import Footer from './components/Footer'
 import Login from './components/form/Login'
 import Register from './components/form/Regiter'
 import DemoCard from './pages/DemoCard'
+import Products from './pages/Products'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -71,6 +72,10 @@ function App() {
         {
           path: '/democard',
           element: <DemoCard />
+        },
+        {
+          path: '/products',
+          element: <Products />
         },
       ]
     },
