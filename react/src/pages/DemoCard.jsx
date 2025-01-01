@@ -27,21 +27,23 @@ const Card = () => {
         fetch();
     }, [])
     return (
-        <div>
-            <h1 className='text-lg font-extrabold'>Api fetch</h1>
-            <div>
-                {
-                    data?.map((item, index) => {
-                        return (
-                            <div key={index} className='p-2'>
-                                <h1 className='font-extrabold'>{item.title}</h1>
-                                <p>{item.body}</p>
-                            </div>
-                        )
-                    })
-                }
+        <>
+            <div className='w-full'>
+                <h1 className='text-lg font-extrabold ml-2'>Api fetch</h1>
+                <div>
+                    {
+                        data?.map((item, index) => {
+                            return (
+                                <div key={index} className='p-2'>
+                                    <h1 className='font-extrabold'>{item.title}</h1>
+                                    <p>{item.body}</p>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

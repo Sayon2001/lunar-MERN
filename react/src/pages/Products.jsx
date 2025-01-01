@@ -5,8 +5,8 @@ import ProductCard from '../components/ProductCard'
 const Products = () => {
     const [data, setData] = useState()
     const fetch = async () => {
-        await axios.get('http://192.168.1.3:8800/api/post/getAllPost').then((res) => {
-            setData(res.data)
+        await axios.get('https://dummyjson.com/products').then((res) => {
+            setData(res.data.products)
         }).catch((e) => {
             console.log(e);
         })
@@ -16,7 +16,7 @@ const Products = () => {
         fetch()
     }, [])
     return (
-        <div className='bg-white mt-5 pt-4'>
+        <div className='bg-white pt-4 flex justify-center'>
             <ProductCard product={data} />
         </div>
     )
