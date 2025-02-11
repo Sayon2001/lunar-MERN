@@ -11,11 +11,11 @@ import { db } from "../database/db.js";
 // }
 
 export const insertUser = (req, res) => {
-    const { name, email, password } = req.body;
+    const { name, email, password, role, age } = req.body;
 
-    const q = "INSERT INTO user (name, email, password) VALUES (?, ?, ?)";
+    const q = "INSERT INTO user (name, email, password,role,age) VALUES (?, ?, ?,?,?)";
 
-    db.query(q, [name, email, password], (err, result) => {
+    db.query(q, [name, email, password, role, age], (err, result) => {
         if (err) {
             res.send(err);
         }
