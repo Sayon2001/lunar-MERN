@@ -33,3 +33,29 @@ export const getUser = (req, res) => {
         res.send(result);
     })
 }
+
+export const deleteUser = (req, res) => {
+    const { id } = req.params;
+
+    const q = "DELETE FROM user WHERE id = ?";
+    db.query(q, [id], (err, result) => {
+        if (err) {
+            res.send(err);
+        }
+        res.send(result);
+    })
+}
+
+export const editUser = (req, res) => {
+    const { name, email, password, role, age } = req.body;
+    const { id } = req.params;
+
+    const q = "UPDATE user SET name = ?, email = ?, password = ?, role = ?, age = ? WHERE id = ?";
+
+    db.query(q, [name, email, password, role, age, id], (err, result) => {
+        if (err) {
+            res.send(err);
+        }
+        res.send(result);
+    });
+}
